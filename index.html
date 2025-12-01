@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Pesquisa Programação e Algoritmos</title>
+
+    <style>
+        body {
+            background-color: #456882;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        /*https://colorhunt.co/palette/1b3c53234c6a456882e3e3e3*/
+        header {
+            margin-top: 10px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            background-color: #E3E3E3;
+            max-width: 1000px;
+            width: 55%;
+
+            border-radius: 15px;
+            margin-left: 330px;
+            box-shadow: 4px 10px 6px rgba(0.1, 0, 0, 0.1);
+
+            display: flex;
+            /*habilitar o flex*/
+            align-items: center;
+            /*centralizar verticalmente*/
+            justify-content: center;
+            /*centralizar horizontalmente   */
+        }
+
+        header img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .Headerh1 {
+            padding: 20px;
+            text-align: center;
+        }
+
+        header ul {
+            list-style: none;
+        }
+
+        header li {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: #E3E3E3;
+            color: black;
+
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #c3c7cb;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #4180AB;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <ul class="header-content">
+            <li><img src="Compuiter.jpg" alt="Ícone de Computador"></li>
+        </ul>
+        <h1 class="Headerh1">Pesquisa Programação e Algoritmos</h1>
+    </header>
+
+    <div class="content" id="main-content">
+        <h1>Carregando...</h1>
+    </div>
+
+    <script>
+        // funçao que limpa os scripts das outras paginas para nao dar problema quando entrar em uma pagina "nova".
+        function cleanupScripts() {
+            // Encontra os scripts das outras paginas
+            const scripts = document.body.querySelectorAll('.temp-script');
+            // Joga eles fora
+            scripts.forEach(script => script.remove());
+        }
+
+        // Função para carregar o conteúdo do arquivo via fetch
+        function carregarConteudo(caminho, tituloDaPagina) {
+
+            cleanupScripts();   // Começa limpando o script pra nao da erro
+
+            fetch(caminho)  // Oque ta escrito aqui é algo como: Capturar o caminho, o caminhao é onde ta o arquivo: ./index-conteudo.html
+                // quando completar o fetch(Caminho), ele vai voltar com um resposta)
+                // De sucesso ou erro, e quando ele voltar, entao executa o then
+                // response(poderia ser outro nome) é a própria resposta, verdadeira ou falsa
+                // (response => é a mesma coisa que (function(response)). Ela quer dizer
+                // Pegue este argumento (response) e execute este bloco de código
+                // o then aqui de baixo é quase a mesma coisa que, .quando a resposta chegar (executa isso aqui)
+                .then(response => {
+
+                    // response.ok é uma propriedade booleana do response
+                    // Ela é true se o codigo de Status HTTP estiver na faixa de numeros
+                    // que nao da erro. Exemplo: 200-299 = Sucesso. 500 = Erro
+
+                    // ! é para inverter o sinal, por exemplo
+                    // se response.ok = true, entao !response.ok = false
+                    if (!response.ok === true) {
+                        // Throw New Error faz toda execução parar
+                        // é tipo Atenção PARE, houve um problema!
+                        // response.status contem o codigo de erro.
+                        // Caminho é o caminho do arquivo
+                        throw new Error(`Erro ${response.status}: Arquivo "${caminho}" não encontrado.`);
+                    }
+                    // response é o mesmo la de cima.
+                    // .text() le todo o conteudo e transforma em uma grande sequencia de caracteres
+                    // o .text() também vai enviar uma mensagem de verdadeiro ou falso (promisse)
+                    return response.text();
+                })
+                // Aqui é parecido com la em cima
+                // A resposta vai vir do response.text()
+                // quando a resposta chegar, ele executa oque ta em baixo
+                // armazenar_v_f é a variavel onde vai ficar armazenada a resposta
+                // Verdadeira ou Falsa
+                // function quer dizer para executar oque ta em baixo
+                .then(function (armazenar_v_f) {
+                    // Declarar constante chamada mainContent
+                    //Esta é uma função essencial do navegador (DOM - Document Object Model) que faz o seguinte:
+                    //Vai até o documento HTML (document).
+                    // Procura o elemento que tem o atributo id igual a 'main-content'.
+                    //Este elemento é o contêiner principal
+                    // Todo o conteúdo visual será colocado dentro dele. 
+                    // Se este elemento não for encontrado, você não tem onde colocar o novo comodo.
+                    const mainContent = document.getElementById('main-content');
+                    // Verifica se o elemento foi encontrado.
+                    if (!mainContent) {
+                        console.error("Erro: Elemento com ID 'main-content' não encontrado.");
+                        // se nao for ele interrompe a execuçao do resto com return
+                        return;
+                    }
+
+                    // Cria um div na memoria do navegador, mas nao da pra ver  
+                    // ela server pra analisar o HTML recebido antes de colocar na pagina
+                    // Analisar o html é 
+                    // Usar a capacidade interna do navegador para transformar texto em elementos HTML.
+                    // Só da para encontrar e remover os scripts se eles forem objetos de HTML, não apenas texto.
+                    const tempDiv = document.createElement('div');
+                    // armazenar_v_f contém todo o conteudo baixado pelo fetch da outra pagina
+                    // Porem as informaçoes que estao la dentro estao apenas como texto puro
+                    // 'tipo: <h1>Título</h1><p>Conteúdo</p>'
+                    // ai atribui o .innerHTML na div temporaria (tempDiv)
+                    // e entao o texto puro se transforma em elementos de verdade
+                    // ai agora o <h1>Título</h1> funciona como um elemento html 
+                    // e nao só como texto
+                    // e ai agora o armazenar_v_f nao contém apenas texto que nao faz nada
+                    // mas elementos html que funciona
+
+                    tempDiv.innerHTML = armazenar_v_f;
+
+                    // Extrai os scripts antes de inserir o resto do HTML
+                    const scripts = Array.from(tempDiv.querySelectorAll('script'));
+
+                    // Remove os scripts do tempDiv para que apenas o HTML seja inserido
+                    scripts.forEach(script => script.remove());
+
+                    // Insere o HTML (conteúdo visual) no container principal
+                    mainContent.innerHTML = tempDiv.innerHTML;
+
+                    //Executa os scripts manualmente
+                    // Se eu colocasse o <script> com o .innerHTML só
+                    // ele estaria la, mas o navegador nao ia executar os scripts por segurança
+                    // ai o codigo abaixo server pra eu remover o <script> de la
+                    // e mandar direto pro maincontent
+
+                    // scripts.forEach é procurar todos os scripts que tao na tempDiv
+                    // Lembrando que toda a pagina ta armazenada la
+
+                    // Para cada script que foi removido:
+                    scripts.forEach(script => {
+                        // 1. Cria um NOVO elemento <script> do zero.
+                        const newScript = document.createElement('script');
+                        // Adiciona uma classe para limpeza futura
+                        newScript.classList.add('temp-script');
+
+                        // o codigo precisa saber se o script ta em um arquivo separado .js
+                        // ou direto no HTML
+                        // ai aqui em baixo ele confere isso
+
+                        // 3. Checa se o script original (o guardado) tinha um endereço externo (src)
+                        if (script.src === true) {
+                            // se sim ele vai copiar o endereço pra o novo script gerado manualmente
+                            // ai o navegador vai atras do .js
+
+                            // src contem o caminho para o arquivo externo
+                            newScript.src = script.src;
+                        } else {
+                            // senao ele manda o código JavaScript que estava escrito DENTRO da tag 
+                            // script pra dentro do novo
+
+                            // Contém o código JavaScript escrito inline (entre as tags <script>)
+                            newScript.textContent = script.textContent;
+                        }
+
+                        // Anexa ao body. Isso força o navegador a compilar e executar a função.
+                        // isso daqui pega o script que eu criei e preenchi coloca no fim do body
+                        document.body.appendChild(newScript);
+                    });
+
+                    document.title = "Pesquisa de PA";
+                    console.log(`Página carregada: #${caminho}`);
+
+                })
+                // .catch pega o erro e coloca no error, alem de so executar o codigo abaixo se der erro
+                .catch(error => {
+                    console.error('Falha na operação de Fetch:', error);
+                    const mainContent = document.getElementById('main-content');
+                    if (mainContent === true) {
+                        mainContent.innerHTML = `<h1 class="text-red-400">Erro ao carregar</h1><p>${error.message}</p>`;
+                    }
+                });
+        }
+
+        // Funçao que inicia a navegaçao
+        function mudarEstado(caminho, tituloDaPagina) {
+            window.location.hash = caminho;
+            // precisa da / pra carregar o conteudeo direito
+            carregarConteudo('./' + caminho, tituloDaPagina);
+        }
+
+        // Função que lê a Hash atual e carrega o conteúdo correspondente
+        function carregarConteudoPorHash() {
+            const hash = window.location.hash.substring(1);
+
+            let caminho;
+            let titulo;
+            let arquivo; // Variável temporária para o nome do arquivo
+
+            // Determina o arquivo e título com base na Hash
+            if (hash === 'switchcase.html') {
+                arquivo = 'switchcase.html';
+                titulo = 'Estrutura Switch Case';
+            } else if (hash === 'dowhile.html') { 
+                arquivo = 'dowhile.html';
+                titulo = 'Estrutura dowhile';
+                arquivo = 'while.html';
+                titulo = 'Estrutura while';
+            } else {
+                // Conteúdo padrão para a página inicial (se Hash for vazia ou inválida)
+                arquivo = 'index-conteudo.html'; // Presumindo que este arquivo existe
+                titulo = 'Página Inicial';
+            }
+
+            // CORREÇÃO CRÍTICA: Prepara o caminho com o prefixo './' para o fetch funcionar.
+            caminho = './' + arquivo;
+
+            carregarConteudo(caminho, titulo);
+        }
+
+        // 1. Lida com o evento de Hash (navegação de clique/volta do navegador)
+
+        // 2. Lida com o carregamento inicial da página (ou após F5)
+        window.addEventListener('DOMContentLoaded', carregarConteudoPorHash);
+
+
+    </script>
+</body>
+
+</html>

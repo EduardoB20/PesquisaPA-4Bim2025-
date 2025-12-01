@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: "ConsolasRegular";
+            src: url("CONSOLA.TTF") format("truetype");
+            font-weight: 2px;
+        }
+
+        .content {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            padding: 40px;
+            background-color: #234C6A;
+            max-width: 1000px;
+            width: 50%;
+            border-radius: 10px;
+            margin-top: 40px;
+            margin-left: 330px;
+            box-shadow: 10px 10px 6px #1B3C53;
+        }
+
+        /*Cores*/
+
+        .Black {
+            color: black;
+        }
+
+        .Green {
+            color: #007936;
+        }
+
+        .Orange {
+            color: #ee4400;
+        }
+
+        .Purple {
+            color: #801190;
+        }
+
+        .Red {
+            color: red;
+        }
+
+        .Blue {
+            color: #0f6dc2;
+        }
+
+        .BlueVariant {
+            color: #14256c;
+        }
+
+        .NomeDaPágina {
+            color: white;
+        }
+
+        /*Fim Cores*/
+        .ParteDeCimaDiv {
+            background-color: #E3E3E3;
+            height: 50px;
+            font-family: "ConsolasRegular";
+            border-radius: 5px 5px 0 0;
+        }
+
+        .ParteDeBaixoTexto {
+            padding: 10px;
+            color: #51565d;
+            font-weight: 300;
+            letter-spacing: -1px;
+            word-spacing: -1px;
+        }
+
+        .ParteDeCimaTexto {
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .ParteDeBaixoDiv {
+            border: 0.3px solid #c3c7cb;
+            background-color: #c3c7cb;
+            padding: 5px;
+            margin-bottom: 30px;
+            font-family: "ConsolasRegular";
+            font-size: 10px;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .BlocoDeCodigoDiv {
+            font-family: "ConsolasRegular";
+            font-style: normal;
+            font-size: 15px;
+            background-color: #c3c7cb;
+            padding: 15px;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .ParteDeCimaDivExemplo {
+            background-color: #E3E3E3;
+            font-family: "ConsolasRegular";
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .ParteDeCimaTextoExemplo {
+            /* top | right | bottom | left */
+            padding: 2px 2px 2px 7px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .BotoesExecutar {
+            /* top | right | bottom | left */
+            padding: 0 0 0 400px;
+        }
+
+        .Input {
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .Feedback {
+            font-family: "ConsolasRegular";
+            font-style: normal;
+            font-size: 18px;
+            color: #fff;
+            padding: 10px 10px 0 10px;
+            color: #51565d;
+        }
+
+        .Copiar {
+            width: 30px;
+            margin-top: 15px;
+            margin-left: 80%;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nome da pagina-->
+    <h2 class="NomeDaPágina">Estrutura de Repetição: {Loop While}</h2>
+    <!-- Fim Nome da pagina-->
+
+
+    <!-- Primeira parte Definicao-->
+    <div class="ParteDeCimaDiv">
+        <h1 class="ParteDeCimaTexto">
+            DEFINIÇÃO
+        </h1>
+    </div>
+    <div class="ParteDeBaixoDiv">
+        <h1 class="ParteDeBaixoTexto">
+            O Loop While e usado para repetir um bloco de codigo somente enquanto uma condicao for verdadeira.
+        </h1>
+    </div>
+    <!-- Fim da definicao -->
+
+    <!-- Forma Geral -->
+    <div class="ParteDeCimaDiv">
+        <h1 class="ParteDeCimaTexto">FORMA GERAL</h1>
+    </div>
+    <div class="BlocoDeCodigoDiv">
+        <h3 class="Red">while<span class="Orange">(condiçao)</span>{</h3>
+        <h3 class="Blue">ㅤㅤBloco De Código</h3>
+        <h3 class="Red">}</h3>
+    </div>
+    <!-- Fim da Forma Geral-->
+
+    <!-- Exemplo -->
+
+    <!-- Parte de cima; botao de copiar -->
+    <div class="ParteDeCimaDivExemplo">
+        <h1 class="ParteDeCimaTextoExemplo">EXEMPLO</h1>
+        <img src="copiar.png" alt="" class="Copiar" onclick="copiar()">
+    </div>
+    <!-- Fim da Parte de cima; botao de copiar -->
+
+    <!-- Bloco de codigo -->
+    <div class="BlocoDeCodigoDiv">
+        <h3 class="BlueVariant">let x = 1</h3>
+        <h3 class="Black">console.log("Bem Vindo ao programa")</h3>
+        <h3 class="Red">while<span class="Orange">(x<5)</span></h3>
+        <h3 class="Black">ㅤconsole.log<span class="Green">(`Olha, o número atual é: <span
+                    class="Blue">${x}</span>`)</span></h3>
+        <h3 class="Black">ㅤx+=1</h3>
+        <h3 class="Red">}</h3>
+        <h3 class="Black">console.log("Programa Encerrado")</h3>
+
+    </div>
+    <!-- Fim Bloco de codigo -->
+
+    <!-- Fim Exemplo-->
+
+    <!-- Executar Codigo-->
+    <div class="ParteDeCimaDiv">
+        <h2 class="ParteDeCimaTexto">EXECUTE O CÓDIGO</h2>
+    </div>
+    <div class="ParteDeBaixoDiv">
+        <p class="Feedback">Bem Vindo Ao Programa!</p>
+        <div id="FeedbackContainer">
+
+
+        </div>
+        <div class="BotoesExecutar"></div>
+
+        <button onclick="RodarCodigo()" class="bg-green-500 hover:bg-green-700">Rodar</button>
+        <button onclick="Reset()" class="bg-gray-500 hover:bg-gray-700">Resetar</button>
+    </div>
+    <!-- Fim Executar Codigo-->
+
+    <!-- Botao de voltar -->
+    <button onclick="mudarEstado('index-conteudo.html', 'Página Inicial')">
+        Voltar
+    </button>
+    <!-- Fim do botao de Voltar -->
+
+    <script>
+        // Resetar
+        function Reset(){
+            const container = document.getElementById("FeedbackContainer");
+             container.innerHTML = "";
+        }
+
+        // Fim Resetar
+
+        // Rodar Codigo
+        function RodarCodigo(){
+            Reset()
+            const container = document.getElementById("FeedbackContainer");
+
+                const FeedbackUm = document.createElement("p");
+                FeedbackUm.id = "FeedbackUm";
+                FeedbackUm.className = "Feedback"
+                FeedbackUm.textContent = "Olha, o número atual é: 1";
+                container.appendChild(FeedbackUm);
+
+                const FeedbackDois = document.createElement("p");
+                FeedbackDois.id = "FeedbackUm";
+                FeedbackDois.className = "Feedback"
+                FeedbackDois.textContent = "Olha, o número atual é: 2";                
+                container.appendChild(FeedbackDois);
+
+                const FeedbackTrês = document.createElement("p");
+                FeedbackTrês.id = "FeedbackTrês";
+                FeedbackTrês.className = "Feedback"
+                FeedbackTrês.textContent = "Olha, o número atual é: 3";                
+                container.appendChild(FeedbackTrês);
+
+                const FeedbackQuatro = document.createElement("p");
+                FeedbackQuatro.id = "FeedbackQuatro";
+                FeedbackQuatro.className = "Feedback"
+                FeedbackQuatro.textContent = "Olha, o número atual é: 4";                
+                container.appendChild(FeedbackQuatro);
+
+                const FeedbackCinco = document.createElement("p");
+                FeedbackCinco.id = "FeedbackCinco";
+                FeedbackCinco.className = "Feedback"
+                FeedbackCinco.textContent = "Programa Encerrado";                
+                container.appendChild(FeedbackCinco);
+
+        }
+
+        // Fim Rodar Codigo
+        
+
+
+        // Funcao de Copiar
+
+        function copiar() {
+            const textToCopy = `let x = 1
+console.log("Bem Vindo ao programa")
+while(x<5){
+ㅤconsole.log(\`Olha, o número atual é: \${x}\`)
+ㅤx+=1
+}
+console.log("Programa Encerrado")
+`
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert('Código copiado!');
+                })
+                .catch(err => {
+                    console.error('Nao foi possivel copiar: ', err);
+                    alert('Falhou para copiar, tente novamente, ou copie manualmente');
+                });
+        }
+        // Fim da funcao de copiar
+    </script>
+</body>
+
+</html>
