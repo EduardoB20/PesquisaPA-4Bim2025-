@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    .partdcima p {
+        font-size: 0.9em;
+    }
+
+    .content {
+        padding: 20px 10px 10px 10px;
+    }
+
+        .copy {
+            text-align: center;
+            color: #fff;
+        }
+        
+
+        .content {
+
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            /* top | right | bottom | left */
+            padding: 40px 40px 10px 40px;
+            background-color: #234C6A;
+            max-width: 1000px;
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            margin-left: 330px;
+        }
+
+
+        .menu-item p {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #1B3C53;
+        }
+        
+        .partdcima {
+            background-color: #E3E3E3;
+            height: 20px;
+            padding: 5px;
+
+            border-radius: 5px 5px 0 0;
+
+            text-align: center;
+        }
+
+        .partdbaix {
+            border: 0.3px solid #c3c7cb;
+                       background-color: #1B3C53;
+            height: 70px;
+            padding: 5px;
+            margin-bottom: 30px;
+            border-radius: 0 0 5px 5px;
+            text-align: center; 
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                max-width: 90%;
+                width: 90%;
+                margin-top: 20px;
+                /* Garante a centralização no celular */
+                margin-left: auto;
+                margin-right: auto;
+                padding: 20px 10px 10px 10px;
+            }
+
+            .menu-item {
+                /* O item de menu ocupa a largura total do contêiner pai (.content) */
+                width: 100%; 
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="menu-item">
+        <div class="partdcima">
+            <p>Do While</p>
+        </div>
+        <div class="partdbaix">
+            <button onclick="mudarEstado('dowhile.html', 'Estrutura DoWhile')">
+                Ir para Do While
+            </button>
+        </div>
+    </div>
+        <div class="menu-item">
+        <div class="partdcima">
+            <p>Switch Case</p>
+        </div>
+        <div class="partdbaix">
+            <button onclick="mudarEstado('switchcase.html', 'Estrutura Switch Case')">
+                Ir para Switch Case
+            </button>
+        </div>
+    </div>
+    <div class="menu-item">
+        <div class="partdcima">
+            <p>While</p>
+        </div>
+        <div class="partdbaix">
+            <button onclick="mudarEstado('while.html', 'Estrutura de Repetição While')">
+                Ir para While
+            </button>
+        </div>
+    </div>
+    </button>
+    <p class="copy">&copy; 2025 Eduardo Brandão</p>
+</body>
+
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagina {
+            display: none;
+        }
+
+        .ativa {
+            display: block;
+        }
+
+        .content {
+
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            padding: 40px 40px 10px 40px;
+            background-color: #234C6A;
+            max-width: 1000px;
+            width: 50%;
+            border-radius: 10px;
+            /* top | right | bottom | left */
+            margin: 40px 330px 20px 0;
+            margin-top: 40px;
+            margin-left: 330px;
+
+        }
+
+        .Executar {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .dowhile {
+            background-color: white;
+            padding: 15px;
+            border-radius: 2px;
+        }
+
+        .dowhilec1 {
+            font-family: "ConsolasRegular";
+
+            font-style: normal;
+            font-size: 15px;
+            background-color: #c3c7cb;
+            padding: 15px;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .dowhilec2 {
+            font-family: "ConsolasRegular";
+            margin-bottom: 20px;
+            font-style: normal;
+            font-size: 15px;
+            background-color: #c3c7cb;
+            padding: 15px;
+            border-radius: 0 0 3px 3px;
+        }
+
+        .Blue {
+            font-size: 15px;
+            color: #0069c5;
+        }
+
+        .orange {
+            color: #ee4400;
+        }
+
+        .yellow {
+            font-size: 15px;
+            color: #a58747;
+        }
+
+        .Red {
+            font-size: 15px;
+            color: red;
+        }
+
+        .green {
+            font-size: 15px;
+            color: #007936;
+        }
+
+        .roxo {
+            font-size: 15px;
+            color: #801190;
+        }
+
+        .black {
+            font-size: 15px;
+            color: black;
+        }
+
+        .explicacao {
+            background-color: white;
+            padding: 15px;
+            border-radius: 2px;
+            margin-top: 10px;
+        }
+
+        .x {
+            background-color: white;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .inputi {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .constr {
+            font-size: 15px;
+            color: #14256c;
+        }
+
+        .fb {
+            font-family: "ConsolasRegular";
+
+            font-style: normal;
+            font-size: 18px;
+            color: #fff;
+            padding: 10px 10px 0 10px;
+            color: #51565d;
+        }
+
+        .inputii {
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+
+        }
+
+        .copy {
+            text-align: center;
+            color: #fff;
+        }
+
+
+        @font-face {
+            font-family: "ConsolasRegular";
+            src: url("CONSOLA.TTF") format("truetype");
+            font-weight: 2px;
+        }
+
+
+        .partdcima {
+            background-color: #E3E3E3;
+
+            height: 50px;
+            font-family: "ConsolasRegular";
+            border-radius: 5px 5px 0 0;
+
+
+        }
+
+        .baix {
+            padding: 10px;
+            color: #51565d;
+            font-weight: 300;
+            letter-spacing: -1px;
+            word-spacing: -1px;
+        }
+
+        .cim {
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .partdbaix {
+            border: 0.3px solid #c3c7cb;
+            background-color: #c3c7cb;
+            padding: 5px;
+
+            margin-bottom: 30px;
+            font-family: "ConsolasRegular";
+            font-size: 10px;
+            border-radius: 0 0 5px 5px;
+
+        }
+
+        .botoeis {
+            /* top | right | bottom | left */
+            padding: 0 0 0 400px;
+        }
+
+        .copiar {
+            width: 30px;
+
+            margin-top: 15px;
+            margin-left: 80%;
+
+            height: 30px;
+        }
+
+        .partdcimaexem {
+            background-color: #E3E3E3;
+            margin-top: 10px;
+            font-family: "ConsolasRegular";
+            border-radius: 5px 5px 0 0;
+            display: flex;
+        }
+
+        .cimex {
+            /* top | right | bottom | left */
+            padding: 2px 2px 2px 7px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .bt2 {
+            margin: 0;
+            background-color: #c3c7cb;
+        }
+
+        .bt22 {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 95%;
+                width: 95%;
+                padding: 20px 10px 10px 10px;
+            }
+
+            body>h2 {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .bt2,
+            .bt22 {
+                display: inline-block;
+                padding: 8px 12px;
+                margin: 5px;
+            }
+
+            .partdcimaexem {
+                justify-content: space-between;
+                align-items: center;
+                max-width: 100%;
+                margin-top: 10px;
+            }
+
+            .copiar {
+                margin-left: 10px;
+                margin-right: 5px;
+                width: 25px;
+                height: 25px;
+            }
+
+            .dowhilec1,
+            .dowhilec2 {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                padding: 10px;
+            }
+
+            .dowhilec1 h3,
+            .dowhilec2 h3 {
+                font-size: 13px !important;
+                margin: 2px 0;
+            }
+
+            .partdbaix {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .botoeis {
+                padding: 0;
+                text-align: center;
+            }
+
+            .inputii {
+                width: 90%;
+                margin-bottom: 10px;
+            }
+
+            .cim,
+            .cimex {
+                font-size: 16px;
+                padding: 8px 5px;
+            }
+
+            .baix,
+            .fb {
+                font-size: 14px;
+                word-wrap: break-word;
+            }
+
+            .pagina {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Switch Case</h2>
+    <button onclick="mudarMpagina()" id="bt2" class="bt2">Introdução</button>
+    <button onclick="mudarPpagina()" id="bt22" class="bt22">Break</button>
+    <div class="pagina ativa" id="Pprincipal">
+        <div class="partdcima">
+            <h1 class="cim">DEFINIÇÃO</h1>
+        </div>
+        <div class="partdbaix">
+            <h1 class="baix">O loop do while é usado para repetir um bloco de código enquanto uma condição especifica
+                for
+                falsa ou
+                verdadeira. Exemplo em javascript abaixo:</h1>
+        </div>
+        <div class="partdcima">
+            <h1 class="cim">FORMA GERAL</h1>
+        </div>
+        <div class="dowhilec2">
+            <h3 class="Red">switch<span class="orange">(expressão)</span>{</h3>
+            <h3 class="Blue">ㅤㅤcase valor1:</h3>
+            <h3 class="black">ㅤㅤㅤㅤ<span class="green">//Instruções executadas quando o resultado da expressão for igual
+                    á valor1</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤcase valor2:</h3>
+            <h3 class="black">ㅤㅤㅤㅤ<span class="green">//Instruções executadas quando o resultado da expressão for igual
+                    á valor2</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤcase valorN:</h3>
+            <h3 class="black">ㅤㅤㅤㅤ<span class="green">//Instruções executadas quando o resultado da expressão for igual
+                    á valorN</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤdefault:</h3>
+            <h3 class="black">ㅤㅤㅤ<span class="green">//Instruções executadas quando o resultado da expressão for igual a
+                    nenhum valor dos cases</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Red">}</h3>
+        </div>
+        <div class="partdcimaexem">
+            <h1 class="cimex">EXEMPLO</h1>
+            <img src="copiar.png" alt="" class="copiar" onclick="copiar()">
+        </div>
+        <div class="dowhilec1" id="textocopia">
+            <h3 class="black"><span class="constr">const readline = require('readline-sync');</span></h3>
+            <h3 class="black">console.log("Bem Vindo Ao Programa!")</h3>
+            <h3 class="constr"><span class="constr">let fruta = parseInt(readline.question("Digite 1 para comprar
+                    Laranja;
+                    Digite 2 para comprar Pera; Digite 3 para nao comprar nada\n"))</span></h3>
+
+            <h3 class="Red">switch<span class="orange">(fruta)</span>{</h3>
+            <h3 class="Blue">ㅤㅤcase 1:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log <span class="green">("Voce comprou laranjas")</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤcase 2:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log<span class="green">("Voce comprou peras")</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤcase 3:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log<span class="green">("Voce não comprou nada")</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤdefault:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log<span class="green">("Hmm, parece que esse item nao esta listado")</span>
+            </h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Red">}</h3>
+
+            <h3 class="black"><span class="black">console.log("Programa encerrado")</span></h3>
+
+        </div>
+
+
+        <div class="partdcima">
+            <h2 class="cim">EXECUTE O CÓDIGO</h2>
+        </div>
+        <div class="partdbaix">
+            <p class="fb">Bem Vindo Ao Programa!</p>
+            <p id="feedback" class="fb">Digite 1 para comprar Laranja; Digite 2 para comprar Pera; Digite 3 para nao
+                comprar
+                nada</p>
+            <p id="feedback2" class="fb"></p>
+            <input type="number" id="inputX" class="inputii" placeholder="Entre com X" value="">
+
+            <button onclick="verificarDoWhile()" class="bg-green-500 hover:bg-green-700">Verificar</button>
+            <button onclick="reseti()" class="bg-gray-500 hover:bg-gray-700">Resetar</button>
+        </div>
+
+
+        <!--
+         , se isso for verdadeiro, ele vai
+            parar ali, senaoele vai ver o conferir o valor de x novamente, porem agora com o, e o x foi
+                declarado como 0 la
+                em cima, entao o programa ira continuar, ate que atenda a (x == 1), entao a saida sera "Programa Encerrado".
+    -->
+        <div class="partdcima">
+            <h1 class="cim">COMO ISSO FUNCIONA ?</h1>
+        </div>
+
+        <div class="partdbaix">
+            <h1 class="baix">Primeiro o usuario entra com o número da fruta</h1>
+            <h1 class="baix">Depois chamamos o switch</h1>
+            <h1 class="baix">Ele vai fazer varias checagens com o valor da variavel 'fruta'</h1>
+            <h1 class="baix">A checagem ocorre por meio do 'case'</h1>
+            <h1 class="baix">É como se o programa estivesse dizendo: </h1>
+            <h1 class="baix">caso for (valor_especifico) faz tudo oque esta em BAIXO</h1>
+            <h1 class="baix">O break aqui serve para ele parar naquele lugar.</h1>
+            <h1 class="baix">Se nao houvesse o break ele iria apenas continuar até o fim, ou até um outro break.</h1>
+            <h1 class="baix">Default é o padrao, ou seja, se não for nenhum dos cases(casos), ele vai fazer aquilo.</h1>
+
+
+
+
+
+        </div>
+
+
+
+
+        <button onclick="mudarEstado('index-conteudo.html', 'Página Inicial')">
+            Voltar
+        </button>
+        <p class="copy">&copy; 2025 Eduardo Brandão</p>
+    </div>
+
+
+
+
+
+    </div>
+    <div class="pagina" id="mais">
+        <div class="partdcima">
+            <h1 class="cim">O que acontece se esquecer um break?</h1>
+        </div>
+        <div class="partdbaix">
+            <h1 class="baix">Se esquecer um break então o script irá rodar até um dos pontos a seguir: Um outro break. O
+                fim do switch.</h1>
+        </div>
+        <div class="partdcimaexem">
+            <h1 class="cimex">EXEMPLO</h1>
+            <img src="copiar.png" alt="" class="copiar" onclick="copiarbrak()">
+        </div>
+        <div class="dowhilec1" id="textocopia">
+            <h3 class="black"><span class="constr">const readline = require('readline-sync');</span></h3>
+            <h3 class="black">console.log("Bem Vindo Ao Programa!")</h3>
+            <h3 class="constr"><span class="constr">let Numero = parseInt(readline.question("Digite o número")) </span>
+            </h3>
+
+            <h3 class="Red">switch<span class="orange">(Numero)</span>{</h3>
+            <h3 class="Blue">ㅤㅤcase 1:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log <span class="green">("1 é Ímpar")</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤcase 2:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log<span class="green">("2 é par")</span></h3>
+            <h3 class="green">ㅤㅤㅤㅤ// COMENTARIO: Deveria existir um break aqui!</h3>
+            <h3 class="Blue">ㅤㅤcase 3:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log<span class="green">("3 é Ímpar")</span></h3>
+            <h3 class="green">ㅤㅤㅤㅤ// já que nao existe ele continua até o proximo break(esse aqui)</h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Blue">ㅤㅤdefault:</h3>
+            <h3 class="black">ㅤㅤㅤㅤconsole.log<span class="green">("Não sei que número é esse!")</span></h3>
+            <h3 class="roxo">ㅤㅤㅤㅤbreak;</h3>
+            <h3 class="Red">}</h3>
+
+            <h3 class="black"><span class="black">console.log("Programa encerrado")</span></h3>
+
+        </div>
+        <div class="partdcima">
+            <h2 class="cim">EXECUTE O CÓDIGO</h2>
+        </div>
+        <div class="partdbaix">
+            <p class="fb">Bem Vindo Ao Programa!</p>
+            <p id="feedbackbreak" class="fb">Digite o número </p>
+
+            <p id="feedback2break" class="fb"></p>
+            <p id="feedback3break" class="fb"></p>
+            <input type="number" id="inputXx" class="inputii" placeholder="Entre com o número" value="">
+
+            <button onclick="verificarbreak()" class="bg-green-500 hover:bg-green-700">Verificar</button>
+            <button onclick="resetii()" class="bg-gray-500 hover:bg-gray-700">Resetar</button>
+        </div>
+        <button onclick="mudarEstado('index-conteudo.html', 'Página Inicial')">
+            Voltar
+        </button>
+        <p class="copy">&copy; 2025 Eduardo Brandão</p>
+    </div>
+    <script>
+
+        function copiar() {
+            const textToCopy = `const readline = require('readline-sync')
+
+console.log("Bem Vindo Ao Programa!")
+let fruta = parseInt(readline.question("Digite 1 para comprar Laranja; Digite 2 para comprar Pera; Digite 3 para nao comprar nada\\n"))
+
+switch(fruta){
+    case 1:
+        console.log("Voce comprou laranjas")
+        break;
+    case 2:
+        console.log("Voce comprou peras!")
+        break;
+    case 3:
+        console.log("Voce nao comprou nada!")
+        break;
+    default:
+        console.log("Hmm, esse item nao esta listado")
+        break;
+}
+console.log("Programa encerrado")
+`
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert('Código copiado!');
+                })
+                .catch(err => {
+                    console.error('Nao foi possivel copiar: ', err);
+                    alert('Falhou para copiar, tente novamente, ou copie manualmente');
+                });
+        }
+        function copiarbrak() {
+            const textToCopy = `const readline = require('readline-sync');
+console.log("Bem Vindo Ao Programa!")
+let Numero = parseInt(readline.question("Digite o número"))
+switch(Numero){
+    case 1:
+        console.log ("1 é Ímpar")
+        break;
+    case 2:
+        console.log("2 é par")
+        // COMENTARIO: Deveria existir um break aqui!
+    case 3:
+        console.log("3 é Ímpar")
+        // já que nao existe ele continua até o proximo break(esse aqui)
+        break;
+    default:
+        console.log("Não sei que número é esse!")
+        break;
+}
+console.log("Programa encerrado")   
+`
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert('Código copiado!');
+                })
+                .catch(err => {
+                    console.error('Nao foi possivel copiar: ', err);
+                    alert('Falhou para copiar, tente novamente, ou copie manualmente');
+                });
+        }
+
+        function verificarDoWhile() {
+            const NumeroInput = document.getElementById('inputX');
+            const feedback = document.getElementById('feedback');
+            const feedback2 = document.getElementById('feedback2');
+            if (!NumeroInput || !feedback) return;
+
+            fruta = parseInt(NumeroInput.value.trim());
+            switch (fruta) {
+                case 1:
+                    feedback.textContent = "Voce comprou laranjas";
+                    NumeroInput.disabled = true;
+                    document.querySelector('button[onclick="verificarDoWhile()"]').disabled = true;
+                    document.getElementById('feedback2').textContent = "";
+                    break;
+                case 2:
+                    feedback.textContent = "Voce comprou peras";
+                    NumeroInput.disabled = true;
+                    document.querySelector('button[onclick="verificarDoWhile()"]').disabled = true;
+                    document.getElementById('feedback2').textContent = "";
+                    break;
+                case 3:
+                    feedback.textContent = "Voce nao comprou nada!";
+                    NumeroInput.disabled = true;
+                    document.querySelector('button[onclick="verificarDoWhile()"]').disabled = true;
+                    document.getElementById('feedback2').textContent = "";
+                    break;
+                default:
+                    feedback.textContent = "Hmm, esse item nao esta listado";
+                    NumeroInput.disabled = true;
+                    document.querySelector('button[onclick="verificarDoWhile()"]').disabled = true;
+                    document.getElementById('feedback2').textContent = "";
+                    break;
+            }
+            document.getElementById('feedback2').textContent = "Programa encerrado";
+        }
+        function verificarbreak() {
+            const NumeroInput1 = document.getElementById('inputXx');
+            const feedbackbreak = document.getElementById('feedbackbreak');
+            const feedback2break = document.getElementById('feedback2break');
+            const feedback3break = document.getElementById('feedback3break')
+            if (!NumeroInput1 || !feedbackbreak) return;
+
+            numero = parseInt(NumeroInput1.value.trim());
+            switch (numero) {
+                case 1:
+                    feedbackbreak.textContent = "1 é Ímpar";
+                    NumeroInput1.disabled = true;
+                    document.querySelector('button[onclick="verificarbreak()"]').disabled = true;
+                    document.getElementById('feedback2break').textContent = "";
+                    document.getElementById('feedback3break').textContent = "";
+                    break;
+                case 2:
+                    document.getElementById('feedbackbreak').textContent = "2 é par";
+                    document.getElementById('feedback2break').textContent = "3 é Ímpar";
+                    break;
+                case 3:
+                    document.getElementById('feedbackbreak').textContent = "3 é Ímpar";
+                    NumeroInput1.disabled = true;
+                    document.querySelector('button[onclick="verificarbreak()"]').disabled = true;
+                    break;
+                default:
+                    NumeroInput1.disabled = true;
+                    document.querySelector('button[onclick="verificarbreak()"]').disabled = true;
+                    document.getElementById('feedbackbreak').textContent = "Não sei que número é esse!";
+                    document.getElementById('feedback2break').textContent = "";
+                    document.getElementById('feedback3break').textContent = "";
+                    break;
+            }
+            document.getElementById('feedback3break').textContent = "Programa encerrado";
+
+        }
+        function reseti() {
+            const NumeroInput = document.getElementById('inputX');
+            const feedback = document.getElementById('feedback');
+            const feedback2 = document.getElementById('feedback2');
+            const ResetarInput = document.getElementById('inputX')
+            document.querySelector('button[onclick="verificarDoWhile()"]').disabled = false;
+            NumeroInput.disabled = false
+            NumeroInput.value = "";
+            valorX = 0;
+            document.getElementById('feedback').textContent = "Digite 1 para comprar Laranja; Digite 2 para comprar Pera; Digite 3 para nao comprar nada";
+            document.getElementById('feedback2').textContent = "";
+
+            console.log("resetado")
+        }
+        function resetii() {
+            const NumeroInput = document.getElementById('inputXx');
+            const feedback = document.getElementById('feedbackbreak');
+            const feedback2 = document.getElementById('feedback2break');
+            const ResetarInput = document.getElementById('inputX')
+            document.querySelector('button[onclick="verificarbreak()"]').disabled = false;
+            NumeroInput.disabled = false
+            NumeroInput.value = "";
+            valorX = 0;
+            document.getElementById('feedbackbreak').textContent = "Digite o número";
+            document.getElementById('feedback2break').textContent = "";
+            document.getElementById('feedback3break').textContent = "";
+
+
+            console.log("resetado")
+        }
+        function mudarPpagina() {
+            const pagina_principal = document.getElementById('Pprincipal')
+            const mais = document.getElementById('mais')
+            let butao = document.getElementById('bt22')
+            let butao2 = document.getElementById('bt2')
+
+            pagina_principal.style.display = "none"
+            mais.style.display = "block"
+
+            butao.style.margin = '0';
+            butao.style.backgroundColor = '#c3c7cb';
+
+            butao2.style.margin = '0';
+            butao2.style.backgroundColor = '#e3e3e3';
+        }
+        // e3e3e3
+        function mudarMpagina() {
+            const pagina_principal = document.getElementById('Pprincipal')
+            const mais = document.getElementById('mais')
+            let butao = document.getElementById('bt2')
+            let butao2 = document.getElementById('bt22')
+            pagina_principal.style.display = "block"
+            mais.style.display = "none"
+
+            butao.style.margin = '0';
+            butao.style.backgroundColor = '#c3c7cb';
+
+            butao2.style.margin = '0';
+            butao2.style.backgroundColor = '#e3e3e3';
+        }
+    </script>
+
+</body>
+
+</html>
